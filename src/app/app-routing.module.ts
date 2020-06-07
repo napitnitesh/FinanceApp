@@ -8,6 +8,8 @@ import { ResetPasswordComponent } from './auth/reset-password/reset-password.com
 import { ManageExpencesComponent } from './home/manage-expences/manage-expences.component';
 import { ManageCategoriesComponent } from './home/manage-categories/manage-categories.component';
 import { DashboardComponent } from './home/dashboard/dashboard.component';
+import { AllCategoryComponent } from './home/manage-categories/all-category/all-category.component';
+import { AddCategoryComponent } from './home/manage-categories/add-category/add-category.component';
 
 
 const routes: Routes = [
@@ -24,8 +26,12 @@ const routes: Routes = [
   {path:'home',component:HomeComponent,
    children:[
      {path:'',component:DashboardComponent},
+     {path:'dashboard',component:DashboardComponent},
      {path:'manage-expence',component:ManageExpencesComponent},
-     {path:'manage-category',component:ManageCategoriesComponent}
+     {path:'manage-category',component:ManageCategoriesComponent,children:[
+       {path:'',component:AllCategoryComponent},
+       {path:'add-category',component:AddCategoryComponent}
+     ]}
    ]},
   {path:'',redirectTo: '/home',pathMatch: 'full'},
   {path:'**',component:AuthComponent}
