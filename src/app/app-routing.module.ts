@@ -5,6 +5,9 @@ import { HomeComponent } from './home/home.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
+import { ManageExpencesComponent } from './home/manage-expences/manage-expences.component';
+import { ManageCategoriesComponent } from './home/manage-categories/manage-categories.component';
+import { DashboardComponent } from './home/dashboard/dashboard.component';
 
 
 const routes: Routes = [
@@ -18,7 +21,12 @@ const routes: Routes = [
   ]
 
 },
-  {path:'home',component:HomeComponent},
+  {path:'home',component:HomeComponent,
+   children:[
+     {path:'',component:DashboardComponent},
+     {path:'manage-expence',component:ManageExpencesComponent},
+     {path:'manage-category',component:ManageCategoriesComponent}
+   ]},
   {path:'',redirectTo: '/home',pathMatch: 'full'},
   {path:'**',component:AuthComponent}
 ];

@@ -20,6 +20,8 @@ import { ExpenceSummaryComponent } from './home/expence-summary/expence-summary.
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { from } from 'rxjs';
+import { DashboardComponent } from './home/dashboard/dashboard.component';
+import { HomeNavbarComponent } from './shared/home-navbar/home-navbar.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { from } from 'rxjs';
     AllCategoryComponent,
     ExpenceSummaryComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    DashboardComponent,
+    HomeNavbarComponent
   ],
   imports: [
     BrowserModule,

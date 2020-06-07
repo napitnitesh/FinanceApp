@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -8,12 +9,13 @@ export class AuthService {
  password="123456"
  isSignedIn=false
 
-  constructor() { }
+  constructor(public router:Router) { }
 
   signin(email,password){
     if(email==this.email && password==this.password){
       this.isSignedIn=true
-      alert("successfull")
+      //alert("successfull")
+        this.router.navigateByUrl("/home")
 
     }
     else{
@@ -22,7 +24,9 @@ export class AuthService {
   }
 
   logout(){
+    console.log("inside logout")
     this.isSignedIn=false
+    this.router.navigateByUrl("/auth")
   }
   isAuthenticated(){
     return this.isSignedIn
