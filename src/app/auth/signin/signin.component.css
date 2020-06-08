@@ -1,0 +1,59 @@
+table input[type=email]{
+    text-align: center;
+    border: none;
+    border-bottom: 2px solid grey;
+    width: 100%;
+    font-size: 15px;
+}
+
+table input[type=password]{
+    text-align: center;
+    border: none;
+    border-bottom: 2px solid grey;
+    width:100%;
+    font-size: 15px;
+}
+
+table button{
+    align-items: center;
+    width: 150px;
+    border-radius: 25px 25px 25px 25px;
+    font-size: 15px;
+    padding-bottom: 10px;
+}
+
+table a{
+    float: right;
+    color: grey;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+p{
+    text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: grey;
+    font-size: 20px;
+}
+
+/* .row{
+    position: absolute;
+	top: 50%;
+	left: 50%;
+    transform: translate(-50%,-50%);
+    margin-left: 100px;
+} */
+
+form{
+    position: relative;
+	top: 50%;
+	left: 50%;
+    transform: translate(-50%,-50%);
+    
+}
+.form{
+    height: 500px;
+    background-color: white;
+    border-radius: 10px;
+    width: 100%;
+}

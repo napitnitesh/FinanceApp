@@ -1,12 +1,22 @@
-<div class="row">
-    <div class="col-lg-4"></div>
-    <div class="col-lg-4">
-        <br>
-        <input class="form-control" type="email" [(ngModel)]="email">
-        <br>
-        <input class="form-control" type="password" [(ngModel)]="password">
-        <br>
-        <button class="btn btn-primary btn-block" (click)="signin()">Sign In</button>
-    </div>
-    <div class="col-lg-4"></div>
-</div>
+    
+        <div class="row my-5" style="box-shadow: 1px 1px 20px 20px #fff; margin-top: 0px;">
+            <div class="col-lg-3 col-md-12 col-12" width="100%"> </div>
+            <div class="col-lg-6 col-md-12 col-12 bg-light" style="width:500px; height:auto;">   
+                <form style="width: 100%;" autocomplete="off">
+                    <h3 style="text-align: center; font-family: cursive; color:#9a9e65f5;">Finance App</h3>
+                    <p>Welcome To FinanceApp</p>
+                    <table align="center" width="70%">
+                        <input type="email" placeholder="Email ID" class="bg-light ml-3" name="email" [(ngModel)]="email"><br><br>
+                        <input type="password" placeholder="password" class="bg-light ml-3" name="password" [(ngModel)]="password"><br><br>
+                        <a routerLink="/auth/reset-password">forgot password?</a><br>
+                        <a routerLink="/auth/signup">New User</a><br>
+                        <button class="btn btn-success my-3 w-100" (click)="signin()" type="submit">Login</button>
+                        <p>or</p>
+                        <button class="btn btn-danger w-100">Google</button>
+                    </table>
+                </form>
+            </div>
+            <div class="col-lg-3 col-md-12 col-12" width="100%"> </div>
+        </div>
+    
+

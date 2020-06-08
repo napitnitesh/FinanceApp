@@ -1,1 +1,49 @@
-<p>signup works!</p>
+<!-- <div class="container">
+   
+        <div class="row my-5">
+        <div class="col-lg-8 col-md-8 col-8 ml-5" style="box-shadow: 1px 1px 20px 20px #fff;">
+        <img src="assets/image/signup5.jpeg" width="100%" height="150px">
+        </div>
+        
+        <div class="col-lg-8 col-md-8 col-8 bg-dark ml-5" style="width: 100%; height: 50%;box-shadow: 1px 1px 20px 20px #fff;">   
+            <form action="" method="" style="width: 100%; height: 50%;">
+                
+                <table align="center" width="50%" height="50%">
+                    <h3 style="text-align:center; font-family: cursive; color:#e0d7d7f5;">Finance App</h3>
+                    <p>Welcome To FinanceApp</p>
+                    <input type="text" placeholder="Name" class="bg-dark"><br>
+                    <input type="text" placeholder="Email ID" class="bg-dark"><br>
+                    <input type="password" placeholder="password" class="bg-dark"><br>
+                    <input type="text" placeholder="Mobile number" class="bg-dark"><br>
+                    <a href="#">Already Registered?</a><br>
+                    <button class="btn btn-success my-4" type="submit">Sign up</button>
+                </table>
+            </form>
+        </div>
+    </div>
+</div> -->
+
+<div class="container">
+    <div class="row my-5">    
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6 col-md-12 col-12">   
+        
+        <form class="alert alert-light" style="width: 80%; height: 100%; border-radius: 10%;" autocomplete="off" #userdata="ngForm">
+            <table align="center" width="80%" height="50%" class="alert alert-alert" style="box-shadow: 1px 1px 20px 20px #fff">
+                <br><br>
+                <h3 style="text-align:center; font-family: cursive; color:#e0d7d7f5;">Finance App</h3>
+                <p>Welcome To FinanceApp</p>
+                <tr align="center">
+                <input type="text" placeholder="Name" class="alert alert-light" name="username" [(ngModel)]="username"><br>
+                <input type="email" placeholder="Email ID" class="alert alert-light" name="useremail" [(ngModel)]="email"><br>
+                <input type="password" placeholder="password" class="alert alert-light" name="userpassword" [(ngModel)]="password"><br>
+                <!-- <input type="text" placeholder="Mobile number" class="bg-dark" name="usermobile" ngModel><br> -->
+                <a routerLink="/auth">Already Registered?</a><br>
+                <button class="btn btn-success my-4" type="submit">Sign up</button>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+</div>
+
