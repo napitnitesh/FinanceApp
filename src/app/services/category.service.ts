@@ -1,20 +1,26 @@
 import { Injectable } from '@angular/core';
+import { Category } from '../models/category.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategoryService {
 
-  categories=[]
-
+categories:Category[]=[]
 
   constructor() {
-    this.categories.push("Food")
-    this.categories.push("Entertainment")
+    let category=new Category()
+    category.name="Food"
+    this.categories.push(category)
+    category=new Category()
+    category.name="Entertainment"
+    this.categories.push(category)
    }
 
   addCategory(categoryName:string){
-    this.categories.push(categoryName)
+    let category=new Category()
+      category.name=categoryName
+    this.categories.push(category);
 
   }
 

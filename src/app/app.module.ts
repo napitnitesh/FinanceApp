@@ -22,6 +22,9 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { from } from 'rxjs';
 import { DashboardComponent } from './home/dashboard/dashboard.component';
 import { HomeNavbarComponent } from './shared/home-navbar/home-navbar.component';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+
 
 @NgModule({
   declarations: [
@@ -47,7 +50,8 @@ import { HomeNavbarComponent } from './shared/home-navbar/home-navbar.component'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [],
   bootstrap: [AppComponent]

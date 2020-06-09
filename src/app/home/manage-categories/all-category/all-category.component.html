@@ -6,11 +6,15 @@
         <div class="col-lg-3"></div>
         <div class="col-lg-6">
             <br><br>
-            <h5>Availabe Categories</h5>
+            <div class="row">
+                <h5>Availabe Categories</h5>
+                <button class="btn btn-warning ml-5" routerLink="add-category">Add Category</button>
+            </div>
+            
             <br><br>
             <div class="card" *ngFor="let category of categories" >
                 <div class="card-body">
-                    <h6>{{category}}</h6>
+                    <h6>{{category.name}}</h6>
                     <br>
                     <button class="btn btn-danger">Delete</button>
                 </div>
