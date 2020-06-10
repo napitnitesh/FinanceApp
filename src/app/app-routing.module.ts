@@ -10,6 +10,7 @@ import { ManageCategoriesComponent } from './home/manage-categories/manage-categ
 import { DashboardComponent } from './home/dashboard/dashboard.component';
 import { AllCategoryComponent } from './home/manage-categories/all-category/all-category.component';
 import { AddCategoryComponent } from './home/manage-categories/add-category/add-category.component';
+import { EditCategoryComponent } from './home/manage-categories/edit-category/edit-category.component';
 
 
 const routes: Routes = [
@@ -30,7 +31,8 @@ const routes: Routes = [
      {path:'manage-expence',component:ManageExpencesComponent},
      {path:'manage-category',component:ManageCategoriesComponent,children:[
        {path:'',component:AllCategoryComponent},
-       {path:'add-category',component:AddCategoryComponent}
+       {path:'add-category',component:AddCategoryComponent},
+       {path:'edit-category:id',component:EditCategoryComponent}
      ]}
    ]},
   {path:'',redirectTo: '/home',pathMatch: 'full'},

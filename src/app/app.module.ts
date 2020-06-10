@@ -28,6 +28,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import 'firebase/firestore';
 import 'firebase/auth';
 import { environment } from '../environments/environment';
+import { EditCategoryComponent } from './home/manage-categories/edit-category/edit-category.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { environment } from '../environments/environment';
     NavbarComponent,
     FooterComponent,
     DashboardComponent,
-    HomeNavbarComponent
+    HomeNavbarComponent,
+    EditCategoryComponent
   ],
   imports: [
     BrowserModule,
