@@ -23,6 +23,10 @@ import { from } from 'rxjs';
 import { DashboardComponent } from './home/dashboard/dashboard.component';
 import { HomeNavbarComponent } from './shared/home-navbar/home-navbar.component';
 import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import 'firebase/firestore';
+import 'firebase/auth';
 import { environment } from '../environments/environment';
 
 
@@ -51,7 +55,10 @@ import { environment } from '../environments/environment';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule   
+
   ],
   providers: [],
   bootstrap: [AppComponent]
