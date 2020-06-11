@@ -1,13 +1,13 @@
 <!-- <p>all-category works!</p>
 <button class="btn btn-primary" routerLink="add-category">Add Category</button> -->
-
+<!--
 <div class="container">
     <div class="row">
         <div class="col-lg-3"></div>
         <div class="col-lg-6">
             <br><br>
             <div class="row">
-                <h5>Availabe Categories</h5>
+                <h5>Categories</h5>
                 <button class="btn btn-warning ml-5" routerLink="add-category">Add Category</button>
             </div>
             
@@ -17,10 +17,56 @@
                     <h6>{{category.name}}</h6>
                     <br>
                     <button (click)="deleteCategory(category.id)" class="btn btn-danger">Delete</button>
-                    <button  class="btn btn-warning mx-2">Edit</button>
+                    <button [routerLink]="['/home/manage-category/edit-category',category.id]" class="btn btn-warning mx-2">Edit</button>
                 </div>
             </div>
         </div>
         <div class="col-lg-3"></div>
     </div>
+</div>  -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6"><br><br>
+
+            <div class="card text-center border border-dark">
+                <div class="card-header">
+                  <ul class="nav nav-pills card-header-pills">
+                    <li class="nav-item">
+                      <a class="nav-link active" class="btn btn-warning" routerLink="add-category" >Add Category</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="card" *ngFor="let category of categories" >
+                    <div class="card-body">
+                        <h6>{{category.name}}</h6>
+                        <br>
+                        <button (click)="deleteCategory(category.id)" class="btn btn-danger">Delete</button>
+                        <button [routerLink]="['/home/manage-category/edit-category',category.id]" class="btn btn-warning mx-2">Edit</button>
+                    </div> 
+                 </div>                   
+              </div>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

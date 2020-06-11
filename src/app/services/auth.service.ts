@@ -1,34 +1,57 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
- email="niteshnapit19990@gmail.com"
- password="123456"
- isSignedIn=false
+ uid=null
 
-  constructor(public router:Router) { }
+  constructor(public router:Router,public auth:AngularFireAuth,public db:AngularFirestore) {
+    this.auth.authState.subscribe(res=>{
+      console.log(res)
+      this.uid=res.uid
+      this.router.navigateByUrl("/home")
+    })
+   }
 
   signin(email,password){
-    if(email==this.email && password==this.password){
-      this.isSignedIn=true
-      //alert("successfull")
-        this.router.navigateByUrl("/home")
-
-    }
-    else{
-      alert("incoreect email or password")
-    }
+      this.auth.signInWithEmailAndPassword(email,password).then(res=>{
+        console.log(res.user.uid)
+        if(res.user.uid){
+          this.uid=res.user.uid
+          this.router.navigateByUrl("/home")
+        }
+      }).catch(err=>{
+        console.log(err)
+      })    
   }
 
   logout(){
-    console.log("inside logout")
-    this.isSignedIn=false
-    this.router.navigateByUrl("/auth")
+    this.auth.signOut().then(res=>{
+      this.uid=null
+      this.router.navigateByUrl("/auth")
+    })
   }
   isAuthenticated(){
-    return this.isSignedIn
+   if(this.uid){
+     return true
+   }
+   else{
+     return false
+   }
+  }
+
+  signup(email,password,name){
+    this.auth.createUserWithEmailAndPassword(email,password).then(res=>{
+      this.db.collection("users").doc(res.user.uid).set({name:name})
+
+    }).catch(err=>{
+      console.log(err)
+
+    })
+
   }
 }

@@ -45,7 +45,7 @@ export class CategoryService {
    );
   }
    updateCategory(id,updatedCategory){
-     this.db.collection("category").doc(id).update(Object.assign({},updatedCategory))
+    return this.db.collection("category").doc(id).update(Object.assign({},updatedCategory))
 
    }  
 

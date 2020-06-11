@@ -11,6 +11,7 @@ import { DashboardComponent } from './home/dashboard/dashboard.component';
 import { AllCategoryComponent } from './home/manage-categories/all-category/all-category.component';
 import { AddCategoryComponent } from './home/manage-categories/add-category/add-category.component';
 import { EditCategoryComponent } from './home/manage-categories/edit-category/edit-category.component';
+import { AuthGuardService } from './services/auth-gaurd.service';
 
 
 const routes: Routes = [
@@ -24,7 +25,7 @@ const routes: Routes = [
   ]
 
 },
-  {path:'home',component:HomeComponent,
+  {path:'home',component:HomeComponent,canActivate:[AuthGuardService],
    children:[
      {path:'',component:DashboardComponent},
      {path:'dashboard',component:DashboardComponent},
@@ -32,7 +33,7 @@ const routes: Routes = [
      {path:'manage-category',component:ManageCategoriesComponent,children:[
        {path:'',component:AllCategoryComponent},
        {path:'add-category',component:AddCategoryComponent},
-       {path:'edit-category:id',component:EditCategoryComponent}
+       {path:'edit-category/:id',component:EditCategoryComponent}
      ]}
    ]},
   {path:'',redirectTo: '/home',pathMatch: 'full'},

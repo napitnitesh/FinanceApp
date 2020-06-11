@@ -29,6 +29,7 @@ import 'firebase/firestore';
 import 'firebase/auth';
 import { environment } from '../environments/environment';
 import { EditCategoryComponent } from './home/manage-categories/edit-category/edit-category.component';
+import { AuthGuardService } from './services/auth-gaurd.service';
 
 
 @NgModule({
@@ -62,7 +63,7 @@ import { EditCategoryComponent } from './home/manage-categories/edit-category/ed
     AngularFireAuthModule   
 
   ],
-  providers: [],
+  providers: [AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
