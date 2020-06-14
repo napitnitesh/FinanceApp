@@ -12,6 +12,9 @@ import { AllCategoryComponent } from './home/manage-categories/all-category/all-
 import { AddCategoryComponent } from './home/manage-categories/add-category/add-category.component';
 import { EditCategoryComponent } from './home/manage-categories/edit-category/edit-category.component';
 import { AuthGuardService } from './services/auth-gaurd.service';
+import { AllExpenceComponent } from './home/manage-expences/all-expence/all-expence.component';
+import { AddExpenceComponent } from './home/manage-expences/add-expence/add-expence.component';
+import { ExpenceSummaryComponent } from './home/expence-summary/expence-summary.component';
 
 
 const routes: Routes = [
@@ -28,8 +31,12 @@ const routes: Routes = [
   {path:'home',component:HomeComponent,canActivate:[AuthGuardService],
    children:[
      {path:'',component:DashboardComponent},
+     {path:'expence-summary',component:ExpenceSummaryComponent},
      {path:'dashboard',component:DashboardComponent},
-     {path:'manage-expence',component:ManageExpencesComponent},
+     {path:'manage-expence',component:ManageExpencesComponent,children:[
+       {path:'',component:AllExpenceComponent},
+       {path:'add-expence',component:AddExpenceComponent}
+     ]},
      {path:'manage-category',component:ManageCategoriesComponent,children:[
        {path:'',component:AllCategoryComponent},
        {path:'add-category',component:AddCategoryComponent},
