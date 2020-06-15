@@ -35,4 +35,24 @@ export class ExpenceService {
     }))
    );
   }
+
+   getExpenceByCatId(id){
+    return this.db.collection("users").doc(this.auth.uid).collection("expence",ref=>ref.where("category","==",id).orderBy("category","asc")).snapshotChanges().pipe(
+      map(actions => actions.map(a => {
+        const data = a.payload.doc.data() as any;
+        const id = a.payload.doc.id;
+        return { id, ...data };
+      }))
+     );
+   }
+
+  getExpenceBetweenDate(startdate,enddate){
+    return this.db.collection("users").doc(this.auth.uid).collection("expence",ref=>ref.where("timestamp",">=",startdate).where("timestamp","<=",enddate)).snapshotChanges().pipe(
+      map(actions => actions.map(a => {
+        const data = a.payload.doc.data() as any;
+        const id = a.payload.doc.id;
+        return { id, ...data };
+      }))
+     );
+  }
 }

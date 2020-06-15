@@ -1,9 +1,14 @@
 import { Injectable } from '@angular/core';
+import { AuthService } from './auth.service';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SummaryService {
 
-  constructor() { }
+  constructor(public auth:AuthService,public db:AngularFirestore) {
+
+    
+   }
 }
